@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f7f2" />
+  <meta name="description" content="Your year in calls, wrapped. A private call log recap that stays on your device." />
+  <title>Call Wrapped — your year, on the line</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Call Wrapped home"><span class="brand-icon">◉</span> call<span class="brand-light">wrapped</span><span class="beta">BETA</span></a>
+      <nav><a href="#how">How it works</a><a href="#privacy">Privacy</a><a class="github-link" href="https://github.com/gtxPrime/whats-wrap" target="_blank" rel="noreferrer">Inspired by WhatsWrap ↗</a></nav>
+      <button class="top-cta" id="nav-upload">Make my wrap <span>↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> YOUR YEAR, ON THE LINE</div>
+          <h1>Every call<br />has a <span>story.</span></h1>
+          <p class="hero-sub">The people you always pick up for. The calls that went on forever. Your 2am “you still awake?” era. It’s all in there.</p>
+          <p class="hero-sub hero-sub2">Let’s see what your call log has been trying to tell you.</p>
+          <button class="primary-button" id="hero-upload"><span>✳</span> Build my call wrap <span class="button-arrow">↗</span></button>
+          <button class="demo-button" id="demo-button">Peek at a demo wrap <span>→</span></button>
+          <div class="privacy-note"><span>⌑</span> Just you and your browser. Your call log never leaves your device.</div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a phone with a playful call history">
+          <div class="sparkle s1">✳</div><div class="sparkle s2">✦</div><div class="sparkle s3">✳</div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="floating-note note-top"><span class="note-icon peach">↗</span><span><b>One more minute?</b><small>42 min later…</small></span></div>
+          <div class="phone-shadow"></div>
+          <div class="phone">
+            <div class="phone-speaker"></div>
+            <div class="phone-status"><span>9:41</span><span>◔ ▰</span></div>
+            <div class="phone-heading"><div>RECENTS</div><span>•••</span></div>
+            <div class="phone-calls">
+              <div class="mini-call"><div class="avatar avatar-orange">M</div><span><b>Mom</b><small>mobile · outgoing</small></span><em>8:42 pm</em></div>
+              <div class="mini-call"><div class="avatar avatar-lilac">J</div><span><b>Jamie</b><small>mobile · incoming</small></span><em>6:18 pm</em></div>
+              <div class="mini-call missed"><div class="avatar avatar-sky">?</div><span><b>Unknown caller</b><small>missed · nice try</small></span><em>3:04 pm</em></div>
+              <div class="mini-call"><div class="avatar avatar-green">S</div><span><b>Sam</b><small>mobile · outgoing</small></span><em>11:09 am</em></div>
+            </div>
+            <div class="phone-home"></div>
+          </div>
+          <div class="floating-note note-bottom"><span class="note-icon lilac">◷</span><span><b>Your longest call</b><small>2h 18m with Jamie</small></span></div>
+          <div class="art-caption">A little recap of all your hellos <span>♡</span></div>
+        </div>
+        <div class="hero-stamp">THE 2025<br />CALL EDITION<br /><span>NO SPREADSHEETS ALLOWED</span></div>
+      </section>
+
+      <section class="ticker" aria-label="Call recap features"><div class="ticker-track"><span>THE CALL YOU MADE MOST <i>✳</i></span><span>YOUR 2AM ERA <i>✳</i></span><span>LONGEST “QUICK CHAT” <i>✳</i></span><span>WHO ALWAYS CALLS BACK <i>✳</i></span><span>THE CALL YOU MADE MOST <i>✳</i></span><span>YOUR 2AM ERA <i>✳</i></span><span>LONGEST “QUICK CHAT” <i>✳</i></span></div></section>
+
+      <section class="upload-section" id="upload">
+        <div class="section-label"><span>01</span><span>FIRST, THE CALL LOG</span></div>
+        <div class="upload-layout">
+          <div><h2>Bring the receipts.<br /><span>Keep them here.</span></h2><p class="body-copy">Export your call history as an XML file, drop it in, and we’ll turn the “just calling to say hi”s into something worth a second look.</p><div class="upload-footnote"><span>◉</span> Android XML call log supported</div></div>
+          <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Choose a call log XML file">
+            <input type="file" id="file-input" accept=".xml,text/xml,application/xml" hidden />
+            <div class="upload-icon">↑</div>
+            <h3>Drop your call log here</h3>
+            <p>or <button id="browse-button" class="text-button">choose a file</button> from your device</p>
+            <div class="file-badge">↗ &nbsp; XML file &nbsp;·&nbsp; up to 25 MB</div>
+            <div class="upload-error" id="upload-error" role="alert"></div>
+            <div class="loading-message" id="loading-message">Reading your calls locally…</div>
+          </div>
+        </div>
+        <div class="privacy-strip"><span class="lock-icon">⌑</span><div><b>Your call log is personal. We get it.</b><p>Everything is processed right here in your browser. No uploads, no servers, no “your data may be shared with partners” footnotes. Close the tab and it’s gone.</p></div><span class="local-pill"><i></i> 100% ON-DEVICE</span></div>
+      </section>
+
+      <section class="loading-screen" id="loading-screen" aria-live="polite" hidden><div class="loading-spark">✳</div><div class="loading-ring"><span>☎</span></div><div class="eyebrow"><span class="live-dot"></span> CONNECTING THE DOTS</div><h2 id="loading-title">Counting the hellos…</h2><p id="loading-subtitle">Finding the people who keep showing up.</p><div class="loading-progress"><i id="loading-progress"></i></div><div class="loading-caption">YOUR CALLS NEVER LEAVE THIS DEVICE</div></section>
+
+      <section class="preview-section" id="recap" hidden>
+        <div class="recap-header"><div><div class="eyebrow"><span class="live-dot"></span> YOUR CALL WRAPPED IS READY</div><h2>Your year,<br /><span>on the line.</span></h2><p id="recap-range"></p></div><div class="recap-actions"><button class="outline-button" id="share-button">↗ Share my wrap</button><button class="outline-button" id="new-file-button">＋ New call log</button></div></div>
+        <div class="story-banner"><span class="story-star">✳</span><div><div class="card-kicker">THE STORY IN A SENTENCE</div><p id="story-sentence">—</p></div><span class="story-side">YOUR YEAR<br/>IN CALLS</span></div>
+        <div class="stat-grid">
+          <article class="stat-card stat-peach"><div class="card-kicker">THE BIG PICTURE <span>01 / 06</span></div><div class="stat-number" id="total-calls">—</div><div class="stat-title">calls, start to finish</div><div class="stat-bottom"><span id="call-breakdown">—</span><span class="big-emoji">☎</span></div></article>
+          <article class="stat-card stat-lilac"><div class="card-kicker">YOU HAD THINGS TO SAY <span>02 / 06</span></div><div class="stat-number" id="total-time">—</div><div class="stat-title">of quality time on the phone</div><div class="stat-bottom"><span>That’s a lot of “so anyway…”</span><span class="big-emoji">◷</span></div></article>
+          <article class="stat-card stat-yellow"><div class="card-kicker">THE “QUICK CALL” AWARD <span>03 / 06</span></div><div class="stat-number" id="longest-call">—</div><div class="stat-title">your longest conversation</div><div class="stat-bottom"><span id="longest-contact">—</span><span class="big-emoji">⏱</span></div></article>
+          <article class="stat-card stat-sky"><div class="card-kicker">RING RING, IT’S THEM <span>04 / 06</span></div><div class="stat-number stat-contact" id="top-contact">—</div><div class="stat-title">your number one on speed dial</div><div class="stat-bottom"><span id="top-contact-count">—</span><span class="big-emoji">♡</span></div></article>
+        </div>
+        <div class="chart-grid">
+          <article class="chart-card"><div class="chart-heading"><div><div class="card-kicker">WHEN YOU’RE MOST LIKELY TO PICK UP</div><h3>Your call o’clock</h3></div><span class="chart-emoji">◷</span></div><div class="hour-chart" id="hour-chart"></div><div class="chart-legend"><span><i class="legend-dot"></i> calls by time of day</span><b id="peak-hour">—</b></div></article>
+          <article class="chart-card"><div class="chart-heading"><div><div class="card-kicker">A VERY BUSY DAY IN YOUR LIFE</div><h3>The call rush</h3></div><span class="chart-emoji">✳</span></div><div class="busy-day" id="busy-day"><div class="busy-day-icon">✳</div><div><b id="busy-date">—</b><span id="busy-count">—</span></div></div><div class="day-bars" id="day-bars"></div></article>
+        </div>
+        <div class="chart-grid extra-charts">
+          <article class="chart-card"><div class="chart-heading"><div><div class="card-kicker">THE MONTH YOU WERE EVERYWHERE</div><h3>Your social season</h3></div><span class="chart-emoji">▥</span></div><div class="month-chart" id="month-chart"></div><div class="chart-legend"><span><i class="legend-dot"></i> calls per month</span><b id="peak-month">—</b></div></article>
+          <article class="chart-card rhythm-card"><div class="chart-heading"><div><div class="card-kicker">INCOMING VS. OUTGOING ENERGY</div><h3>Who starts the conversation?</h3></div><span class="chart-emoji">↔</span></div><div class="direction-meter"><div class="meter-label"><span>YOU CALLED</span><b id="outgoing-percent">—</b></div><div class="meter-track"><i id="outgoing-meter"></i></div><div class="meter-label"><span>THEY CALLED</span><b id="incoming-percent">—</b></div></div><p class="rhythm-note" id="rhythm-note">—</p></article>
+        </div>
+        <article class="people-card"><div class="chart-heading"><div><div class="card-kicker">THE USUAL SUSPECTS</div><h3>Your inner circle, by the numbers</h3></div><span class="people-aside">Some people just get more of you.</span></div><div class="people-list" id="people-list"></div></article>
+        <section class="contact-deep-dive"><div class="contact-deep-head"><div><div class="card-kicker">THE PEOPLE BEHIND THE PINGS</div><h3>Who got the most of your minutes?</h3><p>Ranked by connected talk time. Every contact gets their own full stat sheet below.</p></div><div class="deep-dive-stamp">MINUTES<br/>MATTER</div></div><div class="contact-table-wrap"><table class="contact-table"><thead><tr><th>PERSON</th><th>CALLS</th><th>TALK TIME</th><th>AVG / CALL</th><th>IN · OUT · MISSED</th></tr></thead><tbody id="contact-table"></tbody></table></div></section>
+        <section class="person-explorer"><div class="explorer-head"><div><div class="card-kicker">ONE PERSON. THE WHOLE STORY.</div><h3>Go on, pick your person.</h3><p>Explore every call and every available stat for one contact.</p></div><label class="contact-picker"><span>SHOW ME</span><select id="contact-select" aria-label="Choose a contact"></select></label></div><div class="explorer-intro" id="explorer-intro"></div><div class="person-stat-grid" id="person-stat-grid"></div><div class="person-charts"><article class="person-chart-card"><div class="card-kicker">WHEN THIS PERSON CALLS</div><h4>Their call clock</h4><div class="person-hour-chart" id="person-hour-chart"></div><div class="person-chart-foot" id="person-peak-hour"></div></article><article class="person-chart-card"><div class="card-kicker">IN / OUT / MISSED</div><h4>Who rings whom?</h4><div class="person-type-bars" id="person-type-bars"></div><div class="person-chart-foot" id="person-type-summary"></div></article><article class="person-chart-card"><div class="card-kicker">THEIR YEAR WITH YOU</div><h4>Monthly call rhythm</h4><div class="person-month-chart" id="person-month-chart"></div><div class="person-chart-foot" id="person-month-foot"></div></article></div><div class="person-history-head"><div><div class="card-kicker">THE ACTUAL RECEIPTS</div><h4>Every call with this person</h4></div><span id="person-history-count"></span></div><div class="person-history-wrap"><table class="person-history"><thead><tr><th>WHEN</th><th>TYPE</th><th>DURATION</th><th>TIME OF DAY</th><th>NEW FLAG</th></tr></thead><tbody id="person-history"></tbody></table></div></section>
+        <div class="talk-balance" id="talk-balance"></div>
+        <section class="timeline-card"><div class="timeline-head"><div><div class="card-kicker">YOUR YEAR HAD A PLOT</div><h3>Call seasons</h3><p>How your calling life changed month by month.</p></div><span class="timeline-emoji">✳</span></div><div class="timeline-list" id="timeline-list"></div></section>
+        <div class="superlatives" id="superlatives"></div>
+        <div class="fun-award" id="fun-award"><span class="award-icon">✺</span><div><div class="card-kicker">YOUR TOTALLY UNOFFICIAL TITLE</div><h3 id="award-title">—</h3><p id="award-description">—</p></div><span class="award-confetti">✳</span></div>
+        <div class="recap-controls"><button class="primary-button" id="share-story"><span>✳</span> Share the story <span class="button-arrow">↗</span></button><button class="outline-button" id="download-recap">↓ Save my recap</button></div>
+        <div class="recap-end"><span>THAT’S A WRAP. FOR NOW.</span><p>Here’s to the people who still call instead of just texting. <span>♡</span></p><button id="end-new-file" class="text-button">Try another call log ↗</button></div>
+      </section>
+
+      <section class="how-section" id="how"><div class="section-label"><span>02</span><span>THREE VERY EASY STEPS</span></div><h2>From “where’s that file”<br />to <span>“wait, really?”</span></h2><div class="steps"><article><div class="step-number">01</div><div class="step-icon">⇧</div><h3>Export your call log</h3><p>Use your phone’s call history app to export an XML. You can also try our <a href="#upload">sample file</a> to see how it works.</p></article><article><div class="step-number">02</div><div class="step-icon">◌</div><h3>Drop it in</h3><p>Choose the file from your device. We read Android-style XML call logs right here in your browser.</p></article><article><div class="step-number">03</div><div class="step-icon">✳</div><h3>Meet your call personality</h3><p>Browse your call stats, spot your patterns, and find out who keeps your phone bill interesting.</p></article></div></section>
+
+      <section class="privacy-section" id="privacy"><div class="privacy-illustration"><div class="privacy-orbit"></div><div class="privacy-phone"><span>⌑</span><b>YOUR DATA</b><small>STAYS WITH YOU</small></div><div class="privacy-spark">✳</div></div><div class="privacy-copy"><div class="eyebrow">THE BORING (BUT IMPORTANT) BIT</div><h2>Private by<br /><span>phone.</span></h2><p>Your call history is personal. This tool processes your file locally using your browser. The call log is never sent to a server, stored, or shared. You can even use this page offline after it loads.</p><div class="privacy-check"><span>✓</span><span><b>No server uploads</b><small>Your file stays on your device</small></span></div><div class="privacy-check"><span>✓</span><span><b>No tracking of your call data</b><small>No account, no analytics on your log</small></span></div><div class="privacy-check"><span>✓</span><span><b>Close the tab, clear the slate</b><small>Nothing is saved by the tool</small></span></div></div></section>
+
+      <section class="bottom-cta"><div class="bottom-spark spark-a">✳</div><div class="bottom-spark spark-b">✦</div><div class="eyebrow">YOU’VE BEEN TALKING ABOUT THIS LONG ENOUGH</div><h2>Let’s hear<br /><span>the whole story.</span></h2><button class="primary-button" id="bottom-upload"><span>✳</span> Make my call wrap <span class="button-arrow">↗</span></button><p>Free forever. Private by design. Surprisingly revealing.</p></section>
+    </main>
+    <footer><a class="brand" href="#top"><span class="brand-icon">◉</span> call<span class="brand-light">wrapped</span></a><span>Made for the people who still pick up. <b>♡</b></span><span>YOUR CALLS. YOUR STORY. YOUR BUSINESS.</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
